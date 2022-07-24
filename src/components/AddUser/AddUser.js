@@ -17,7 +17,10 @@ const AddUser = () => {
             body: JSON.stringify(user)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                alert('User added successfully...')
+                e.target.reset();
+            });
     }
 
     
