@@ -11,7 +11,17 @@ const Home = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Want to delete?')
         if (proceed) {
-            console.log('deleting ', id);
+            const url = `http://localhost:5000/user/${id}`;
+            fetch(url, {
+                method: 'delete'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        const remaining = users.filter( user => user._id !== id);
+                        setUsers(remaining)
+                    }
+                })
         }
     }
     return (
