@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Repeat = () => {
+    const [users, setUsers] = useState([]);
+
     const handleAddUser = e => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -8,7 +10,7 @@ const Repeat = () => {
 
         const user = { name, email };
 
-        fetch('http://localhost:5000/users', {
+        fetch('http://localhost:5000/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -17,7 +19,7 @@ const Repeat = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('success', data);
+                setUsers(data);
                 alert('User Added Successfully')
                 e.target.reset();
             })

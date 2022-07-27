@@ -9,7 +9,7 @@ const UpdateUser = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setUser(data))
-    }, []);
+    }, [id]);
 
     const handleUpdateUser = e => {
         e.preventDefault();
