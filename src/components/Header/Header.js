@@ -12,7 +12,7 @@ const Header = () => {
                     <NavLink to="add-user" > Add User </NavLink>
                 </li>
                 <li style={{ marginRight: '20px' }}>
-                    <NavLink to="about-me"> About Me </NavLink>
+                    <NavLink to="repeat"> Repeat </NavLink>
                 </li>
             </ul>
         </nav>
