@@ -18,6 +18,8 @@ const Repeat = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('success', data);
+                alert('User Added Successfully')
+                e.target.reset();
             })
     }
     return (
